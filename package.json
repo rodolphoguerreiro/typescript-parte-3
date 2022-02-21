@@ -1,0 +1,26 @@
+{
+  "name": "typescript-parte-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "startFunc": "nodemon --watch 'src/' --exec 'ts-node src/functions.ts' -e ts",
+    "startClass": "nodemon --watch 'src/' --exec 'ts-node src/classes.ts' -e ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodolphoguerreiro/typescript-parte-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodolphoguerreiro/typescript-parte-3/issues"
+  },
+  "homepage": "https://github.com/rodolphoguerreiro/typescript-parte-3#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0"
+  }
+}
