@@ -5,6 +5,16 @@ function addNumbers(num1: number, num2: number){
     return num1 + num2;
 }
 
+//Anonymous
+const exemple1 = function (mesage: string) {
+    return mesage;
+}
+
+//Arrow function
+const exemple2 = (mesage: string) => {
+    return mesage;
+}
+
 /*
 * Typing Tuple
 */
@@ -50,4 +60,27 @@ function logError(msg: string): void {
 const logError2 = (msg: string): void => {
     //return msg;       typing with :string | number etc...
     //console.log();    typing with :void
+}
+
+/*
+* Typing Never
+*/
+function errorExemp1(msg: string): never {
+    throw new Error(msg);
+}
+console.log(errorExemp1('Error 01'));
+
+/*
+* Union Type
+*/
+function add(x: number | string, y: number | string){
+    if(typeof x === 'number' && typeof y === 'number'){
+        return x + y;
+    }
+
+    if(typeof x === 'string' && typeof y === 'string'){
+        return x.concat(y);
+    }
+
+    throw new Error('Erro');
 }

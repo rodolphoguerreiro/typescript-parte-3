@@ -4,6 +4,18 @@
 let mensage: string = 'Helo World!';
 let active: boolean = true;
 
+// union type
+let multiType: number | boolean;
+multiType = 20; //Valid
+multiType = true; //Valid
+multiType = 'string'; //Invalid
+
+type testResult = "pass" | "fail" | "incomplete";
+let myResult: testResult;
+myResult = "incomplete"; //Valid
+myResult = "pass"; //Valid
+myResult = "failure"; //invalid
+
 // type number
 let num1: number = 14.0;     //number
 let num2: number = 0x37CF;   //hexadecimal
@@ -41,38 +53,18 @@ console.log(varExempUndef); //output undefined
 console.log(typeof varExempUndef); //output undefined
 
 /*
-* Typing Array
+* Type aversion
 */
-let animals: string[] = ['Animal1','Animal2'];
-let fruits: Array<string> = ['Fruit1','Fruit2'];
-let languages: string[] = new Array('PHP', 'Node');
+let randonvalue: unknown = 10;
 
-let listNumbers: Array<number> = [1, 2, 3, 4, 5];
-listNumbers = [...listNumbers, 6, 7, 8, 9, 10];
+randonvalue = true;
+randonvalue = 'Mateo';
 
-/*
-* Typing Object
-*/
-let car: {
-    color: string;
-    serie: number;
-    price: number
+if(typeof randonvalue === 'string'){
+    console.log((randonvalue as string).toUpperCase()); // Return MATEO
+}else{
+    console.log('Eroo'); // Return erro
 }
-car = { color: 'black', serie:123, price:123 };
-
-/*
-* Typing Tuple
-*/
-let humam: [string, string, number]; //Limit 3
-humam = ['Man', 'Asian', 39];
-
-let shopCart: [string, ...string[]] = ['meet', 'wine', 'bread', '...']; //Infinite limit
-console.log(...shopCart);
-
-let person: [name: string, age:number, country:string] = ['My name', 34, 'BR'];
-
-//Heterogeneou
-let payCart: [number, boolean, ...string[]] = [5, true, ...shopCart];
 
 /*
 * Typing Numeric Enum [!]
