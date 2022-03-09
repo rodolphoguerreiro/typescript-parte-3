@@ -99,9 +99,9 @@ function systemAccess1(user: User): User{
 console.log(user);
 
 //Using 'generic', in this case with letter "T'
-function systemAccess2<T>(user: T): T{
+function systemAccess2<T>(user: T, email: string): T{
     return user;
 }
 
-console.log(systemAccess2<User>(user));
-console.log(systemAccess2<Admin>(admin));
+console.log(systemAccess2<User>(user, 'asd@asd.com'));
+console.log(systemAccess2<Admin>(admin, 'admin@admin.com'));
